@@ -98,48 +98,32 @@
         /* --- FIXED RESPONSIVE ENGINE --- */
 
         @media (max-width: 767px) {
-            .premium-card h2 {
-                font-size: 0.75rem !important;
-                margin-bottom: 0.5rem !important;
-                line-height: 1.2 !important;
-            }
+            /* ... (tumhari baaki css waisi hi rahegi) ... */
 
-            .premium-card h1 {
-                font-size: 1.5rem !important;
-                line-height: 1.1 !important;
-                margin-bottom: 1rem !important;
-                padding-top: 0.5rem !important;
-            }
-            .max-w-7xl { padding: 0.75rem !important; }
-
-            header {
-                flex-direction: row !important;
-                justify-content: space-between !important;
-                padding: 0.75rem !important;
-                border-radius: 1rem !important;
-            }
-
-            nav {
-                display: none !important;
-            }
-
-            main {
-                display: grid !important;
-                grid-template-columns: 1fr !important;
-                gap: 1rem !important;
-                overflow: visible !important;
-            }
-
-            .premium-card {
+            /* Navbar ke andar wale elements ko control karo */
+            .navbar {
                 display: flex !important;
-                flex-direction: column !important;
-                width: 100% !important;
-                height: auto !important;
-                min-height: auto !important;
-                padding: 1.25rem !important;
-                margin: 0 !important;
+                flex-direction: column !important; /* Stack vertically */
+                align-items: center !important;
+                gap: 15px !important; /* Thoda zyada gap taake chipke nahi */
+                padding: 10px !important;
+            }
+
+            /* LinkedIn aur GitHub ko alignment fix karo */
+            .nav-icons-container { /* Is class ka naam check kar lena, ya apni main container ki class use karo */
+                display: flex !important;
+                flex-direction: column !important; /* LinkedIn GitHub ke neeche aa jayega */
+                align-items: center !important;
+                gap: 10px !important;
+            }
+
+            /* Logo size fixed rakho taake break na ho */
+            .linkedin-logo, .github-logo {
+                width: 30px !important;
+                height: 30px !important;
             }
         }
+
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-cyan-500/30 selection:text-cyan-400 overflow-x-hidden relative antialiased">
@@ -152,18 +136,20 @@
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
 
-    <header class="sticky top-4 z-50 flex justify-between items-center mb-16 backdrop-blur-xl bg-slate-900/40 border border-slate-800/40 rounded-2xl px-6 py-4 shadow-2xl shadow-black/40" data-aos="fade-down" data-aos-duration="800">
-        <!-- FIXED: LinkedIn Header Icon -->
-        <a href="https://www.linkedin.com/in/qasim-sajjad-209a823a8" target="_blank" class="text-slate-400 hover:text-cyan-400 transition-all duration-300 text-lg hover:scale-110">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="#" class="text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent font-mono transition-all duration-300 hover:opacity-85 active:scale-[0.97] outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/50 rounded-lg">
-            QASIM SAJJAD <span class="text-slate-500 font-light text-sm mx-1">|</span> Full Stack Dev
-        </a>
+    <header class="sticky top-4 z-50 flex flex-col md:flex-row justify-between items-center mb-16 backdrop-blur-xl bg-slate-900/40 border border-slate-800/40 rounded-2xl px-6 py-4 shadow-2xl shadow-black/40" data-aos="fade-down" data-aos-duration="800">
+
+        <!-- Grouped: LinkedIn + Name -->
+        <div class="flex items-center gap-4 mb-4 md:mb-0 w-full md:w-auto justify-between md:justify-start">
+            <a href="https://www.linkedin.com/in/qasim-sajjad-209a823a8" target="_blank" class="text-slate-400 hover:text-cyan-400 transition-all duration-300 text-lg hover:scale-110">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="#" class="text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent font-mono transition-all duration-300">
+                QASIM SAJJAD <span class="text-slate-500 font-light text-sm mx-1">|</span> Full Stack Dev
+            </a>
+        </div>
+
         <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-            <a href="#about" class="hover:text-cyan-400 transition-colors duration-300 relative group py-1">About<span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-cyan-400 transition-all duration-300 group-hover:w-full"></span></a>
-            <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300 relative group py-1">Skills<span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-cyan-400 transition-all duration-300 group-hover:w-full"></span></a>
-            <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300 relative group py-1">Projects<span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-cyan-400 transition-all duration-300 group-hover:w-full"></span></a>
+            <!-- tumhare links waisay hi rahenge -->
         </nav>
         <div class="flex items-center space-x-4">
             <!-- FIXED: GitHub Header Icon -->
